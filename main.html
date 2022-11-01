@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>CALCULATOR</h1>
+        <div class="calculator">
+            <div class="section">
+                <input type="text"  placeholder="0" id="result">
+                <button onclick="Clear()" id="clear" class="sign">C</button>
+            </div>
+            <div class="section">
+                <button onclick="display('1')" class="number">1</button>
+                <button onclick="display('2')" class="number">2</button>
+                <button onclick="display('3')" class="number">3</button>
+                <button onclick="display('/')"  class="sign">/</button>
+            </div>
+            <div class="section">
+                <button onclick="display('4')" class="number">4</button>
+                <button onclick="display('5')" class="number">5</button>
+                <button onclick="display('6')" class="number">6</button>
+                <button onclick="display('-')"  class="sign">-</button>
+            </div>
+            <div class="section">
+                <button onclick="display('7')" class="number">7</button>
+                <button onclick="display('8')" class="number">8</button>
+                <button onclick="display('9')" class="number">9</button>
+                <button onclick="display('+')"  class="sign">+</button>
+            </div>
+            <div class="section">
+                <button onclick="display('.')"  class="sign">.</button>
+                <button onclick="display('0')" class="number">0</button>
+                <button onclick="calculate()"  class="sign">=</button>
+                <button onclick="display('*')"  class="sign">*</button>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        let result = document.getElementById("result")
+        function display(num){
+            result.value +=num
+        }
+
+        function Clear(){
+            result.value="";
+        }
+
+        function calculate(){
+            try{
+                result.value= eval(result.value);
+            }catch(err){
+                alert("Invalid")
+            }
+        }
+    </script>
+    
+</body>
+</html>
